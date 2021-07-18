@@ -13,20 +13,26 @@ export default function Header() {
           show ? "flex-col sm:flex-row" : "hidden"
         } bg-white flex text-lg sm:flex`}
       >
-        <a href="#" className="px-6 py-3 text-gray-800 hover:text-indigo-300">
+        <a href="/" className="px-6 py-3 text-gray-800 hover:text-indigo-300">
           Home
         </a>
-        <a href="#" className="px-6 py-3 text-gray-800 hover:text-indigo-300">
+        <a
+          href="/Tools"
+          className="px-6 py-3 text-gray-800 hover:text-indigo-300"
+        >
           Tools
         </a>
-        <a href="#" className="px-6 py-3 text-gray-800 hover:text-indigo-300">
+        <a
+          href="/Contact"
+          className="px-6 py-3 text-gray-800 hover:text-indigo-300"
+        >
           Contact
         </a>
         <a
           href="https://github.com/AlexThomas-Graft0/poweredbyAI"
           className="px-6 py-3 text-gray-800 hover:text-indigo-300"
         >
-          k Contribute
+          Contribute
         </a>
       </nav>
       <button
