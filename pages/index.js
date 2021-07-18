@@ -11,10 +11,20 @@ export default function Home(props) {
   return (
     <div className="p-2 bg-indigo-800">
       <div className="flex flex-col font-sans bg-white shadow-lg sm:rounded-lg">
-        <div className="container px-8 mx-auto">
+        <div className="container px-2 mx-auto">
           <Header />
           <main className="flex flex-col-reverse items-center py-10 sm:flex-row jusitfy-between">
-            <Hero image="aiteamwork" />
+            <Hero
+              image="aiteamwork"
+              cta={
+                <a
+                  href="/Tools"
+                  className="px-6 py-3 text-lg font-bold text-white uppercase bg-indigo-300 rounded-full hover:bg-indigo-400"
+                >
+                  Tools
+                </a>
+              }
+            />
           </main>
         </div>
       </div>
