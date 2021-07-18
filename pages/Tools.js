@@ -16,7 +16,11 @@ export default function Tools(props) {
         <div className="container px-8 mx-auto">
           <Header />
           <main className="flex flex-col-reverse items-center py-10 sm:flex-row jusitfy-between">
-            <Hero />
+            <Hero
+              image="leverageai"
+              title="Leverage AI"
+              subTitle="Shaving seconds from micro-interactions compounds."
+            />
           </main>
         </div>
       </div>

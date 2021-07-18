@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Header() {
   const [show, setShow] = useState(false);
@@ -6,7 +7,7 @@ export default function Header() {
   return (
     <header className="relative flex flex-col items-center justify-between py-6 sm:flex-row">
       <h3 className="text-2xl font-bold text-blue-900 uppercase justify-self-start">
-        Powered By AI
+        <a href="/">Powered By AI</a>
       </h3>
       <nav
         className={`${

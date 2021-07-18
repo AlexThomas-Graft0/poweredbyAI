@@ -14,7 +14,7 @@ export default function Home(props) {
         <div className="container px-8 mx-auto">
           <Header />
           <main className="flex flex-col-reverse items-center py-10 sm:flex-row jusitfy-between">
-            <Hero />
+            <Hero image="aiteamwork" />
           </main>
         </div>
       </div>
