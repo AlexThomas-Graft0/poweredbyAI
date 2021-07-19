@@ -15,15 +15,7 @@ export default function Hero({
           {subTitle}
         </h2>
         <p className="mb-12 leading-relaxed text-gray-600">{description}</p>
-        {cta &&
-          (cta || (
-            <a
-              href="/Tools"
-              className="px-6 py-3 text-lg font-bold text-white uppercase bg-indigo-300 rounded-full hover:bg-indigo-400"
-            >
-              Tools
-            </a>
-          ))}
+        {cta}
       </div>
       <div className="">
         {/* <div className="w-screen h-screen mt-8 mb-16 sm:mb-0 sm:mt-0 sm:w-3/5 sm:pl-12"> */}
