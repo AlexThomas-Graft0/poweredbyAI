@@ -8,7 +8,7 @@ export default function Tools({ tools }) {
   const [error, setError] = useState(null);
 
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(3);
+  const [limit, setLimit] = useState(5);
   const [toolsList, setToolsList] = useState(tools.data);
   const [total, setTotal] = useState(0);
   const initialPages = new Array(Math.ceil(tools.total / limit)).fill("");
@@ -37,7 +37,7 @@ export default function Tools({ tools }) {
 
   return (
     <div className="p-2 bg-indigo-800">
-      <div className="flex flex-col font-sans bg-white rounded-lg shadow-lg">
+      <div className="flex flex-col pb-5 font-sans bg-white rounded-lg shadow-lg">
         <div className="container px-2 mx-auto">
           <Header />
           <main className="flex flex-col-reverse items-center py-10 sm:flex-row jusitfy-between">
@@ -86,6 +86,7 @@ export default function Tools({ tools }) {
               </button>
               {pages.map((i, pageNumber) => (
                 <button
+                  key={pageNumber}
                   className={`flex items-center justify-center w-8 h-8 rounded hover:bg-indigo-200 hover:text-indigo-600 ${
                     page === pageNumber + 1
                       ? "text-indigo-500 bg-indigo-200"
@@ -132,7 +133,10 @@ export default function Tools({ tools }) {
 }
 
 Tools.getInitialProps = async function getInitialProps() {
-  const res = await fetch("http://localhost:3000/api/tools?page=1&limit=3");
+  const res = await fetch(
+    "https://poweredby-ai.vercel.app/api/tools?page=1&limit=5"
+  );
+  console.log({ res });
   const json = await res.json();
   return { tools: json };
 };

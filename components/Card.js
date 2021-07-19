@@ -1,7 +1,10 @@
 export default function Card({ name, image, url, free, price, company }) {
   return (
-    <div className="border border-indigo-100 rounded-lg shadow-lg">
-      <a href={`/${url}`} className="block bg-white rounded-lg shadow-sm h-100">
+    <div className="flex flex-col justify-between border border-indigo-100 rounded-lg shadow-lg">
+      <a
+        href={`/${url}`}
+        className="block bg-white border border-blue-300 rounded-lg shadow-sm h-1/4"
+      >
         <img src={image || "aiteam.svg"} alt="ai" />
       </a>
       <div className="flex items-center justify-between p-1 mt-3">
