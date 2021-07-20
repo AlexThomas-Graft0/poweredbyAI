@@ -40,7 +40,7 @@ export default (req, res) => {
       url: "cast",
       free: true,
       price: "$200.00",
-      company: { name: "Tabnine", url: "https://cast.ai/" },
+      company: { name: "Cast", url: "https://cast.ai/" },
       description: "",
     },
     {
