@@ -133,10 +133,7 @@ export default function Tools({ tools }) {
 }
 
 Tools.getInitialProps = async function getInitialProps() {
-  const res = await fetch(
-    "https://poweredby-ai.vercel.app/api/tools?page=1&limit=5"
-  );
-  console.log({ res });
+  const res = await fetch("http://localhost:3000/api/tools?page=1&limit=5");
   const json = await res.json();
   return { tools: json };
 };
