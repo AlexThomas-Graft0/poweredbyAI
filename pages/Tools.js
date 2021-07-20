@@ -76,10 +76,10 @@ export default function Tools({ tools }) {
                 </svg>
               </button>
               <button
-                className={`flex items-center justify-center h-8 px-2 text-sm font-medium rounded ${
+                className={`flex items-center justify-center h-8 px-2 text-sm font-medium rounded hover:bg-indigo-200 hover:text-indigo-600 ${
                   page === 1 ? "text-gray-400" : "text-gray-600"
                 }`}
-                disabled
+                disabled={page === 1}
                 onClick={() => handlePageChange(null, page - 1)}
               >
                 Prev
@@ -100,15 +100,24 @@ export default function Tools({ tools }) {
               ))}
 
               <button
-                className={`flex items-center justify-center h-8 px-2 text-sm font-medium rounded ${
-                  page === total ? "text-gray-400" : "text-gray-600"
+                className={`flex items-center justify-center h-8 px-2 text-sm font-medium rounded hover:bg-indigo-200 hover:text-indigo-600 ${
+                  page === Math.ceil(total / limit)
+                    ? "text-gray-400"
+                    : "text-gray-600"
                 }`}
+                disabled={page === Math.ceil(total / limit)}
                 onClick={() => handlePageChange(null, page + 1)}
               >
                 Next
               </button>
               <button
-                className="flex items-center justify-center w-8 h-8 text-gray-600 rounded hover:bg-indigo-200 hover:text-indigo-600"
+                className={`flex items-center justify-center w-8 h-8 rounded hover:bg-indigo-200 hover:text-indigo-600 ${
+                  page === Math.ceil(total / limit)
+                    ? "text-gray-400"
+                    : "text-gray-600"
+                }
+                `}
+                disabled={page === Math.ceil(total / limit)}
                 onClick={() => handlePageChange(null, page + 1)}
               >
                 <svg
