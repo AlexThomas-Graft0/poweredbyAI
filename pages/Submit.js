@@ -2,7 +2,7 @@ import { useState } from "react";
 import Card from "../components/Card";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
-export default function Contact() {
+export default function Submit() {
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,

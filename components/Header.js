@@ -24,7 +24,7 @@ export default function Header() {
           Tools
         </a>
         <a
-          href="/Contact"
+          href="/Submit"
           className="px-6 py-3 text-gray-800 hover:text-indigo-300"
         >
           Submit Tool
