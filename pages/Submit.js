@@ -109,7 +109,7 @@ export default function Submit() {
                         >
                           Url
                           <input
-                            type="text"
+                            type="url"
                             id="url"
                             name="url"
                             onChange={handleOnChange}
