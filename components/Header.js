@@ -12,7 +12,7 @@ export default function Header() {
       <nav
         className={`${
           show ? "flex-col sm:flex-row" : "hidden"
-        } bg-white flex text-lg sm:flex`}
+        } bg-white flex text-lg sm:flex text-center`}
       >
         <a href="/" className="px-6 py-3 text-gray-800 hover:text-indigo-300">
           Home
@@ -27,7 +27,7 @@ export default function Header() {
           href="/Contact"
           className="px-6 py-3 text-gray-800 hover:text-indigo-300"
         >
-          Contact
+          Submit Tool
         </a>
         <a
           href="https://github.com/AlexThomas-Graft0/poweredbyAI"
