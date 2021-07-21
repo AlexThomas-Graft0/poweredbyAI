@@ -1,8 +1,15 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-const paginateData = (data, page, limit) => {
+const paginateArray = (array, page, limit) => {
   const start = (page - 1) * limit;
   const end = start + limit;
+  return array.slice(start, end);
+};
+
+const paginateData = (data, page, limit) => {
+  const start = (page - 1) * +limit;
+  const end = start + +limit;
+  console.log({ start, end, limit });
   const results = {
     data: data.slice(start, end),
     total: data.length,
@@ -290,7 +297,8 @@ export default (req, res) => {
     {
       id: 16,
       name: "removal.ai",
-      image: "https://huggingface.co/front/thumbnails/v2-2.png",
+      image:
+        "https://cdn.knoji.com/images/logo/removalai.jpg?aspect=center&snap=false&width=1000&height=500",
       url: "removal",
       free: true,
       freeTrial: true,
@@ -309,7 +317,7 @@ export default (req, res) => {
     {
       id: 17,
       name: "ContentBot.ai",
-      image: "https://huggingface.co/front/thumbnails/v2-2.png",
+      image: "https://contentbot.ai/assets/img/twitter-card-new-3.png",
       url: "contentbot",
       free: true,
       freeTrial: true,
@@ -329,6 +337,7 @@ export default (req, res) => {
 
   const { page, limit } = req.query;
   const dataPage = getData({ data }, { page, limit });
+  // console.log({ dataPage });
 
   res.json(dataPage);
 };
