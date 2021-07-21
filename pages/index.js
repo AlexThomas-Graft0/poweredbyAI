@@ -10,6 +10,7 @@ export default function Home(props) {
 
   return (
     <div className="p-2 bg-indigo-800">
+      <Head></Head>
       <div className="flex flex-col font-sans bg-white shadow-lg sm:rounded-lg">
         <div className="container px-2 mx-auto">
           <Header />
