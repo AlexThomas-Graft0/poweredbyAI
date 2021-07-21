@@ -304,7 +304,26 @@ export default (req, res) => {
         url: "https://removal.ai/",
       },
       description: "",
-      tags: ["writing"],
+      tags: ["images"],
+    },
+    {
+      id: 17,
+      name: "ContentBot.ai",
+      image: "https://huggingface.co/front/thumbnails/v2-2.png",
+      url: "contentbot",
+      free: true,
+      freeTrial: true,
+      trialLength: "1 credit/50 previews",
+      prices: ["$29", "$79"],
+      price: "",
+      paymentFrequency: "monthly",
+      company: {
+        name: "removalai",
+        parent: "",
+        url: "https://contentbot.ai/",
+      },
+      description: "",
+      tags: ["content", "writing"],
     },
   ];
 
