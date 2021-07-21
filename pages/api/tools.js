@@ -9,7 +9,6 @@ const paginateArray = (array, page, limit) => {
 const paginateData = (data, page, limit) => {
   const start = (page - 1) * +limit;
   const end = start + +limit;
-  console.log({ start, end, limit });
   const results = {
     data: data.slice(start, end),
     total: data.length,
@@ -337,7 +336,6 @@ export default (req, res) => {
 
   const { page, limit } = req.query;
   const dataPage = getData({ data }, { page, limit });
-  // console.log({ dataPage });
 
   res.json(dataPage);
 };
