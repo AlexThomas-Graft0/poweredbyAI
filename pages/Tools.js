@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../components/Card";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
@@ -13,7 +13,7 @@ export default function Tools({ tools }) {
   const [total, setTotal] = useState(0);
   const initialPages = new Array(Math.ceil(tools.total / limit)).fill("");
   const [pages, setPages] = useState(initialPages); // on pagesize change
-  console.log({ pages });
+
   const fetchData = async (page) => {
     setIsLoading(true);
     try {
@@ -34,6 +34,10 @@ export default function Tools({ tools }) {
     setPage(page);
     fetchData(page);
   };
+
+  useEffect(() => {
+    fetchData(page);
+  }, [page, limit]);
 
   return (
     <div className="p-2 bg-indigo-800">

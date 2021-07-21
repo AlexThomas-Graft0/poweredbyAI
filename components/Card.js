@@ -5,7 +5,7 @@ export default function Card({ name, image, url, free, price, company }) {
         <img
           src={image || "aiteam.svg"}
           alt="ai"
-          className="object-scale-down w-full border border-indigo-300 rounded max-h-40"
+          className="object-cover w-full border border-indigo-300 rounded min-h-40 max-h-40"
         />
       </a>
       <div className="flex items-center justify-between p-2 mt-3">
