@@ -34,7 +34,6 @@ export default function Submit() {
 
   const handleOnChange = (e) => {
     e.persist();
-    console.log(e.target.value);
     setInputs((prev) => ({
       ...prev,
       [e.target.id]: e.target.value,
