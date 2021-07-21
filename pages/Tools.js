@@ -17,7 +17,6 @@ export default function Tools({ tools }) {
   const fetchData = async (page) => {
     setIsLoading(true);
     try {
-      console.log({ page, limit });
       const response = await fetch(`/api/tools?page=${page}&limit=${limit}`);
       const data = await response.json();
       setIsLoading(false);
