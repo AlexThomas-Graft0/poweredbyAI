@@ -245,7 +245,7 @@ export default (req, res) => {
       freeTrial: false,
       trialLength: "",
       prices: [],
-      price: "",
+      price: "???",
       paymentFrequency: "",
       company: {
         name: "Outwrite",
@@ -283,7 +283,7 @@ export default (req, res) => {
       freeTrial: false,
       trialLength: "",
       prices: [],
-      price: "",
+      price: "???",
       paymentFrequency: "",
       company: {
         name: "huggingface",
@@ -303,7 +303,7 @@ export default (req, res) => {
       freeTrial: true,
       trialLength: "1 credit/50 previews",
       prices: ["$0.07/image", "$0.48/image"],
-      price: "",
+      price: "???",
       paymentFrequency: "",
       company: {
         name: "removalai",
@@ -322,7 +322,7 @@ export default (req, res) => {
       freeTrial: true,
       trialLength: "1 credit/50 previews",
       prices: ["$29", "$79"],
-      price: "",
+      price: "???",
       paymentFrequency: "monthly",
       company: {
         name: "removalai",
