@@ -1,25 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-const paginateArray = (array, page, limit) => {
-  const start = (page - 1) * limit;
-  const end = start + limit;
-  return array.slice(start, end);
-};
-
-const paginateData = (data, page, limit) => {
-  const start = (page - 1) * +limit;
-  const end = start + +limit;
-  const results = {
-    data: data.slice(start, end),
-    total: data.length,
-    page,
-    limit,
-  };
-
-  return results;
-};
-
-const data = [
+const tools = [
   {
     id: 1,
     name: "Tabnine",
@@ -326,15 +307,19 @@ const data = [
   },
 ];
 
-const getData = (state, params) => {
-  const { page, limit } = params;
-  const { data } = state;
-  return paginateData(data, page, limit);
-};
+function getToolById(id) {
+  return tools.find((tool) => tool.id.toString() === id);
+}
 
 export default (req, res) => {
-  const { page, limit } = req.query;
-  const dataPage = getData({ data }, { page, limit });
+  const { id } = req.query;
+  const toolData = getToolById(id);
 
-  res.json(dataPage);
+  // if (!toolData) {
+  //   res.status(404).send({
+  //     message: `Tool with id ${id} not found`,
+  //   });
+  // }
+
+  res.json(toolData);
 };

@@ -6,7 +6,6 @@ import * as ga from "../lib/ga";
 import "../styles/globals.css";
 import Footer from "../components/Footer";
 
-
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
