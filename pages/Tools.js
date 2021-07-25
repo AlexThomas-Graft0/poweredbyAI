@@ -17,7 +17,9 @@ export default function Tools({ tools }) {
   const fetchData = async (page) => {
     setIsLoading(true);
     try {
-      const response = await fetch(`/api/tools?page=${page}&limit=${limit}`);
+      const response = await fetch(
+        `https://poweredby-ai.vercel.app/api/tools?page=${page}&limit=${limit}`
+      );
       const data = await response.json();
       setIsLoading(false);
       setTotal(data.total);

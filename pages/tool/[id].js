@@ -31,7 +31,7 @@ export default function Tool({ tool }) {
 
 export async function getStaticPaths() {
   const toolData = await fetch(
-    "http://localhost:3000/api/tools?page=1&limit=1000"
+    "https://poweredby-ai.vercel.app/api/tools?page=1&limit=1000"
   );
   const { data } = await toolData.json();
   const paths = data.map((tool) => ({
@@ -45,7 +45,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { id } = params;
-  const tool = await fetch(`http://localhost:3000/api/tool?id=${id}`);
+  const tool = await fetch(`https://poweredby-ai.vercel.app/api/tool?id=${id}`);
   const data = await tool.json();
   return {
     props: {

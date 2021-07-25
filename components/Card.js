@@ -1,4 +1,5 @@
 export default function Card({ name, image, url, free, price, company }) {
+  console.log({ url });
   return (
     <div className="flex flex-col justify-between border border-indigo-100 rounded-lg shadow-lg">
       <a href={url} className="block bg-white rounded-lg shadow-sm h-1/4">
