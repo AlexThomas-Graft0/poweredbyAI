@@ -325,7 +325,7 @@ export default (req, res) => {
       price: "???",
       paymentFrequency: "monthly",
       company: {
-        name: "removalai",
+        name: "contentbot",
         parent: "",
         url: "https://contentbot.ai/",
       },
