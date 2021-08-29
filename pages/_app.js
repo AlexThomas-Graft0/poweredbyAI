@@ -11,19 +11,21 @@ import Footer from "../components/Footer";
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
-  useEffect(() => {
-    const handleRouteChange = (url) => {
-      console.log(`changing route to: ${url}`);
-      ga.pageview(url);
-    };
-    router.events.on("routeChangeComplete", handleRouteChange);
+  // useEffect(() => {
+  //   if (window) {
+  //     const handleRouteChange = (url) => {
+  //       console.log(`changing route to: ${url}`);
+  //       ga.pageview(url);
+  //     };
+  //     router.events.on("routeChangeComplete", handleRouteChange);
 
-    // If the component is unmounted, unsubscribe
-    // from the event with the `off` method
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
+  //     // If the component is unmounted, unsubscribe
+  //     // from the event with the `off` method
+  //     return () => {
+  //       router.events.off("routeChangeComplete", handleRouteChange);
+  //     };
+  //   }
+  // }, [router.events]);
 
   return (
     <div className="bg-indigo-800">
