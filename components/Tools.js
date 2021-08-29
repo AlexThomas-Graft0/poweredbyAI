@@ -5,6 +5,23 @@ import { supabase } from "../lib/initSupabase.js";
 
 export default function Tools({ user }) {
   const [tools, setTools] = useState([]);
+  //set inputs
+  const [inputs, setInputs] = useState({
+    name: "",
+    image: "",
+    url: "",
+    free: false,
+    freeTrial: false,
+    trialLength: false,
+    prices: [],
+    price: "",
+    paymentFrequency: "",
+    company: { name: "", url: "" },
+    description: "",
+    parent: "",
+    tags: [],
+  });
+
   const [newToolText, setNewToolText] = useState("");
   const [errorText, setError] = useState("");
 

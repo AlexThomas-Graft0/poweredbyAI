@@ -126,69 +126,72 @@ export default function Submit() {
                           Logout
                         </button>
                       </div>
-                      <form onSubmit={handleOnSubmit}>
-                        <div className="flex items-end justify-center w-full">
-                          <div className="flex flex-col items-center justify-between space-x-1 space-y-4 text-left">
-                            <label
-                              htmlFor="tool"
-                              className="text-sm leading-7 text-gray-600"
-                            >
-                              Tool
-                              <input
-                                type="text"
-                                id="tool"
-                                name="tool"
-                                onChange={handleOnChange}
-                                value={inputs.tool}
-                                required
-                                className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-200 border border-gray-700 rounded outline-none bg-opacity-40 focus:ring-2 focus:ring-indigo-300 focus:bg-transparent focus:border-indigo-500"
-                              />
-                            </label>
-                            <label
-                              htmlFor="url"
-                              className="text-sm leading-7 text-gray-600"
-                            >
-                              Url
-                              <input
-                                type="url"
-                                id="url"
-                                name="url"
-                                onChange={handleOnChange}
-                                value={inputs.url}
-                                required
-                                className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-200 border border-gray-700 rounded outline-none bg-opacity-40 focus:ring-2 focus:ring-indigo-300 focus:bg-transparent focus:border-indigo-500"
-                              />
-                            </label>
-                            <button
-                              type="submit"
-                              disabled={status.submitting}
-                              className="inline-flex px-6 py-2 my-6 text-lg text-white bg-indigo-500 border-0 rounded focus:outline-none hover:bg-indigo-600"
-                            >
-                              {!status.submitting
-                                ? !status.submitted
-                                  ? "Contribute"
-                                  : "Contributed"
-                                : "Contributing..."}
-                            </button>
-                          </div>
-                        </div>
-                      </form>
-                      {status.info.error && (
-                        <div className="w-full mt-2 mb-8 text-sm text-red-500 error">
-                          Error: {status.info.msg}
-                        </div>
-                      )}
-                      <div className="w-full mt-2 mb-8 text-sm">
-                        {!status.info.error && status.info.msg && (
-                          <>
-                            <p className="text-green-500">{status.info.msg}</p>
-                            <p className="text-gray-500">
-                              Thank you for contributing.
-                            </p>
-                          </>
-                        )}
-                      </div>
                     </div>
+                  )}
+                </div>
+                <h3 className="mb-4 text-3xl font-medium text-gray-700 title-font sm:text-4xl">
+                  Or suggest a tool for us to research here
+                </h3>
+                <form onSubmit={handleOnSubmit}>
+                  <div className="flex items-end justify-center w-full">
+                    <div className="flex flex-col items-center justify-between space-x-1 space-y-4 text-left">
+                      <label
+                        htmlFor="tool"
+                        className="text-sm leading-7 text-gray-600"
+                      >
+                        Tool
+                        <input
+                          type="text"
+                          id="tool"
+                          name="tool"
+                          onChange={handleOnChange}
+                          value={inputs.tool}
+                          required
+                          className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-200 border border-gray-700 rounded outline-none bg-opacity-40 focus:ring-2 focus:ring-indigo-300 focus:bg-transparent focus:border-indigo-500"
+                        />
+                      </label>
+                      <label
+                        htmlFor="url"
+                        className="text-sm leading-7 text-gray-600"
+                      >
+                        Url
+                        <input
+                          type="url"
+                          id="url"
+                          name="url"
+                          onChange={handleOnChange}
+                          value={inputs.url}
+                          required
+                          className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-200 border border-gray-700 rounded outline-none bg-opacity-40 focus:ring-2 focus:ring-indigo-300 focus:bg-transparent focus:border-indigo-500"
+                        />
+                      </label>
+                      <button
+                        type="submit"
+                        disabled={status.submitting}
+                        className="inline-flex px-6 py-2 my-6 text-lg text-white bg-indigo-500 border-0 rounded focus:outline-none hover:bg-indigo-600"
+                      >
+                        {!status.submitting
+                          ? !status.submitted
+                            ? "Contribute"
+                            : "Contributed"
+                          : "Contributing..."}
+                      </button>
+                    </div>
+                  </div>
+                </form>
+                {status.info.error && (
+                  <div className="w-full mt-2 mb-8 text-sm text-red-500 error">
+                    Error: {status.info.msg}
+                  </div>
+                )}
+                <div className="w-full mt-2 mb-8 text-sm">
+                  {!status.info.error && status.info.msg && (
+                    <>
+                      <p className="text-green-500">{status.info.msg}</p>
+                      <p className="text-gray-500">
+                        Thank you for contributing.
+                      </p>
+                    </>
                   )}
                 </div>
               </div>
