@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import { Auth } from "@supabase/ui";
+import { supabase } from "../lib/initSupabase";
 
 import * as ga from "../lib/ga";
 
@@ -25,7 +27,9 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <div className="bg-indigo-800">
-      <Component {...pageProps} />
+      <Auth.UserContextProvider supabaseClient={supabase}>
+        <Component {...pageProps} />
+      </Auth.UserContextProvider>
       <Footer />
     </div>
   );

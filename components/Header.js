@@ -1,9 +1,14 @@
 import { useState } from "react";
 import Link from "next/link";
+import { Auth } from "@supabase/ui";
+import { supabase } from "../lib/initSupabase";
 
 export default function Header() {
   const [show, setShow] = useState(false);
   const handleToggle = () => setShow(!show);
+
+  const { user } = Auth.useUser();
+
   return (
     <header className="relative flex flex-col items-center justify-between py-6 sm:flex-row">
       <h3 className="text-2xl font-bold text-blue-900 uppercase justify-self-start">
@@ -29,12 +34,14 @@ export default function Header() {
         >
           Submit Tool
         </a>
-        <a
-          href="https://github.com/AlexThomas-Graft0/poweredbyAI"
-          className="px-6 py-3 text-gray-800 hover:text-indigo-300"
-        >
-          Contribute
-        </a>
+        {user && (
+          <a
+            href="https://github.com/AlexThomas-Graft0/poweredbyAI"
+            className="px-6 py-3 text-gray-800 hover:text-indigo-300"
+          >
+            Contribute
+          </a>
+        )}
       </nav>
       <button
         className="absolute top-0 right-0 flex flex-col p-4 mt-4 sm:hidden"
