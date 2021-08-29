@@ -315,11 +315,5 @@ export default (req, res) => {
   const { id } = req.query;
   const toolData = getToolById(id);
 
-  // if (!toolData) {
-  //   res.status(404).send({
-  //     message: `Tool with id ${id} not found`,
-  //   });
-  // }
-
   res.json(toolData);
 };
