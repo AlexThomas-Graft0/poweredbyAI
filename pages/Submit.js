@@ -6,6 +6,7 @@ import { Auth } from "@supabase/ui";
 import { supabase } from "../lib/initSupabase";
 
 import Tools from "../components/Tools";
+
 export default function Submit() {
   const { user } = Auth.useUser();
 
@@ -90,7 +91,7 @@ export default function Submit() {
                     artificial intelligence &nbsp; machine learning to save
                     time.
                   </p>
-                  {!user ? (
+                  {/* {!user ? (
                     <div className="flex items-center justify-center w-full h-full p-4">
                       <Auth
                         supabaseClient={supabase}
@@ -127,7 +128,7 @@ export default function Submit() {
                         </button>
                       </div>
                     </div>
-                  )}
+                  )} */}
                 </div>
                 <h3 className="mb-4 text-3xl font-medium text-gray-700 title-font sm:text-4xl">
                   Or suggest a tool for us to research here

@@ -3,6 +3,9 @@ import Card from "../components/Card";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 
+import { supabase } from "../lib/initSupabase";
+import { Auth } from "@supabase/ui";
+
 export default function Tools({ tools }) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -17,12 +20,14 @@ export default function Tools({ tools }) {
   const fetchData = async (page) => {
     setIsLoading(true);
     try {
+      // const { data, error } = await supabase.from("tools").select();
+
       const response = await fetch(
         `https://poweredby-ai.vercel.app/api/tools?page=${page}&limit=${limit}`
       );
       const data = await response.json();
       setIsLoading(false);
-      setTotal(data.total);
+      setTotal(data.length);
       setLimit(data.limit); //pagesize
       setToolsList(data.data);
     } catch (error) {
@@ -147,9 +152,7 @@ export default function Tools({ tools }) {
 }
 
 Tools.getInitialProps = async function getInitialProps() {
-  const res = await fetch(
-    "https://poweredby-ai.vercel.app/api/tools?page=1&limit=5"
-  );
+  const res = await fetch("https://poweredby-ai.vercel.app/api/tools?page=1&limit=5");
   const json = await res.json();
   return { tools: json };
 };
