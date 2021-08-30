@@ -91,44 +91,6 @@ export default function Submit() {
                     artificial intelligence &nbsp; machine learning to save
                     time.
                   </p>
-                  {/* {!user ? (
-                    <div className="flex items-center justify-center w-full h-full p-4">
-                      <Auth
-                        supabaseClient={supabase}
-                        providers={["github"]}
-                        socialLayout="horizontal"
-                        socialButtonSize="xlarge"
-                        socialColors={{
-                          facebook: "#3b5998",
-                          google: "#ea4335",
-                          github: "#333",
-                        }}
-                        onLogin={(user) => {
-                          console.log(user);
-                        }}
-                        signup={false}
-                      />
-                    </div>
-                  ) : (
-                    <div>
-                      <div
-                        className="flex flex-col items-center justify-center w-full h-full p-4"
-                        style={{ minWidth: 250, maxWidth: 600, margin: "auto" }}
-                      >
-                        <Tools user={supabase.auth.user()} />
-                        <button
-                          className="w-full mt-12 btn-black"
-                          onClick={async () => {
-                            const { error } = await supabase.auth.signOut();
-                            if (error)
-                              console.log("Error logging out:", error.message);
-                          }}
-                        >
-                          Logout
-                        </button>
-                      </div>
-                    </div>
-                  )} */}
                 </div>
                 <h3 className="mb-4 text-3xl font-medium text-gray-700 title-font sm:text-4xl">
                   Or suggest a tool for us to research here
